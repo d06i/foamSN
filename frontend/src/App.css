@@ -1,0 +1,61 @@
+body{
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  padding: 20px;
+  margin: 20px; 
+  
+}
+ 
+input, button{
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 3px solid ;
+  box-shadow: 5px 5px 10px ; 
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 20px auto;
+  background-color: #f9f9f9;
+  
+}
+ 
+li{
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+
+  box-shadow: 5px 5px 10px #aaa7a7;
+  transition: 0.25s ease; 
+}
+
+li:hover{
+  transform: scale(1.1); 
+}
+
+#chart{
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background-color: #ddd;
+  border-radius: 10px;
+  margin: 0px;
+  padding: 20px;
+}
+
+#diskGraph{
+  background-color: #ddd;
+  border-radius: 10px;
+  margin: 0px;
+  padding: 20px;  
+}
