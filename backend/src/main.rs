@@ -98,7 +98,7 @@ async fn main() -> std::io::Result<()>{
         .service(Files::new("/", "./build").index_file("index.html"))
         .route("/", web::get() )
     })
-  .bind( ("localhost", PORT) )?
+  .bind( ("0.0.0.0", PORT) )?
   .run()
   .await
 
