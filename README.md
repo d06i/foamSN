@@ -1,8 +1,8 @@
 Install for Linux
 ````
-git clone github.com/d06i/foam_graph && cd foam_graph && ./build.sh
+git clone https://github.com/d06i/foam_graph.git && cd foam_graph && ./build.sh
 ````
 or Windows
 ````
-git clone github.com/d06i/foam_graph && cd foam_graph && ./build.bat
+git clone https://github.com/d06i/foam_graph.git && cd foam_graph && ./build.bat
 ````
