@@ -5,9 +5,13 @@ use actix_cors;
 use dotenv;
 use sysinfo::Disks;
 use std::{env, time::Duration};
+use std::sync::{Mutex, OnceLock};
 
 const GB : u64 = 1024 * 1024 * 1024;
 const MB : u64 = 1024 * 1024;
+
+// just start one time
+static GLOBAL_SYS : OnceLock< Mutex<sysinfo::System> > = OnceLock::new();
 
 #[derive(Serialize,Deserialize)]
 struct SystemInfos{
@@ -19,8 +23,9 @@ struct SystemInfos{
 #[post("/sys_info")]
 async fn info() -> impl Responder{
 
-  let mut sys = sysinfo::System::new_all();
-  
+  let sys_mtx = GLOBAL_SYS.get_or_init(|| Mutex::new(sysinfo::System::new_all()) );
+  let mut sys = sys_mtx.lock().unwrap();
+
   sys.refresh_cpu_usage();
  
   tokio::time::sleep(Duration::from_millis(1000)).await;
