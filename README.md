@@ -22,7 +22,7 @@
 ## Usage
 Install for Linux
 ````
-git clone https://github.com/d06i/foamSN.git && cd foamSN && chmod +x && ./build.sh
+git clone https://github.com/d06i/foamSN.git && cd foamSN && chmod +x build.sh && ./build.sh
 ````
 or Windows
 ````
