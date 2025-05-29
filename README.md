@@ -1,11 +1,11 @@
-# Foam Graph
+# FoamSN
  A lightweight and real-time system monitoring (CPU, RAM, Disks) web application built with [Actix.rs](https://actix.rs) and [React](https://react.dev/).
  - Extremely lightweight - typically uses only 5-10 MB of memory.
  - Login is required to access the dashboard. User credentials are defined in .env file and can be customized.
 ````
  The default login is:
  - Username: admin
- - Password: foam1234
+ - Password: foamsn1234
 ````
  -  Currently only CPU, RAM and disks metrics are available. Others metrics may be added soon 🙄
 
@@ -18,11 +18,11 @@
 ## Usage
 Install for Linux
 ````
-git clone https://github.com/d06i/foam_graph.git && cd foam_graph && chmod +x && ./build.sh
+git clone https://github.com/d06i/foamSN.git && cd foamSN && chmod +x && ./build.sh
 ````
 or Windows
 ````
-git clone https://github.com/d06i/foam_graph.git && cd foam_graph && build.bat
+git clone https://github.com/d06i/foamSN.git && cd foamSN && build.bat
 ````
 
 ## Credits

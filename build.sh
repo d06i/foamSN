@@ -1,4 +1,4 @@
-echo "Installing Foam Graph..."
+echo "Installing FoamSN Graph..."
 
 echo "Installing frontend (React)..."
 cd frontend || exit

@@ -1,5 +1,5 @@
 [package]
-name = "foam_graph"
+name = "foamSN"
 version = "0.1.0"
 edition = "2024"
 
