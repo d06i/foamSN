@@ -10,7 +10,7 @@ if [ -d "build" ]; then
 fi    
 
 npm run build
-if [ -d build]; then
+if [ -d "build" ]; then
     echo "Moving 'build' directory to backend..."
     mv build ../backend/
 fi
