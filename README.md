@@ -1,4 +1,8 @@
-# FoamSN
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/042ac67a-ec87-4460-adff-d891f1a5c8c7" alt="FoamSN Logo" width="150"  
+</p>
+ 
+# FoamSN   
  A lightweight and real-time system monitoring (CPU, RAM, Disks) web application built with [Actix.rs](https://actix.rs) and [React](https://react.dev/).
  - Extremely lightweight - typically uses only 5-10 MB of memory.
  - Login is required to access the dashboard. User credentials are defined in .env file and can be customized.
