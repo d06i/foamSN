@@ -16,7 +16,7 @@ call npm run build
  if exist "build\" (
  echo Moving "build" directory to backend...
  move "build" "..\backend"
-
+ )
 cd ..
 
 echo Installing backend (Actix.rs)...

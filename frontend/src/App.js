@@ -76,13 +76,13 @@ function MEMGraph( {sec, memData, availableMEM} ){
     title: { text: "MEM Usage" },
     tooltip: { trigger: "axis" },
     grid: { left: "3%", right: "4%", bottom: "3%", containLabel: true },
-    legend: { data: ["MEM Usage - GB", "Available MEM - GB"] },
+    legend: { data: ["MEM Usage - MB", "Available MEM - MB"] },
     toolbox: { feature: { saveAsImage: {} } },
     xAxis: { type: "category", boundaryGAP: false, data: sec },
     yAxis: { type: "value" /* , min: 0, max:100  */},
     series: [
-       { name: "MEM Usage - GB", type: "line", smooth: true, areaStyle: {}, data: memData },
-       { name: "Available MEM - GB", type: "line", smooth: true, areaStyle: {}, data: availableMEM },
+       { name: "MEM Usage - MB", type: "line", smooth: true, areaStyle: {}, data: memData },
+       { name: "Available MEM - MB", type: "line", smooth: true, areaStyle: {}, data: availableMEM },
      ],  
    // animationDuration: 1000,
    // animationEasing: "cubicOut"

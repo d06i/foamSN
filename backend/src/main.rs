@@ -4,7 +4,10 @@ use actix_files::{self, Files};
 use actix_cors;
 use dotenv;
 use sysinfo::Disks;
-use std::env;
+use std::{env, time::Duration};
+
+const GB : u64 = 1024 * 1024 * 1024;
+const MB : u64 = 1024 * 1024;
 
 #[derive(Serialize,Deserialize)]
 struct SystemInfos{
@@ -12,13 +15,18 @@ struct SystemInfos{
   mem_usage:     u64,
   available_mem: u64 
 }
-  
+
 #[post("/sys_info")]
 async fn info() -> impl Responder{
 
   let mut sys = sysinfo::System::new_all();
-  sys.refresh_all();
-  const MB : u64 = 1024*1024;
+  
+  sys.refresh_cpu_usage();
+ 
+  tokio::time::sleep(Duration::from_millis(1000)).await;
+ 
+  sys.refresh_cpu_usage();
+  sys.refresh_memory();
  
    let infos = SystemInfos{
       cpu_usage:     format!("{:.2}", sys.global_cpu_usage() ),
@@ -40,9 +48,7 @@ struct DiskInfos{
 async fn disk_info() -> impl Responder{
     let disks = Disks::new_with_refreshed_list();
     let mut disk_infos = Vec::new();
-
-    const GB : u64 = 1024 * 1024 * 1024;
-
+ 
     for disk in disks.list(){
 
       let infos = DiskInfos{
@@ -67,9 +73,9 @@ struct Login{
 async fn login( data : web::Json<Login> ) -> impl Responder{
  // read user and password from .env file
   dotenv::dotenv().ok();
-  let admin_user = env::var("USER").expect("USER not found in .env!");
-  let admin_pass = env::var("PASS").expect("PASS not found in .env!");
- 
+  let admin_user = env::var("ADMIN_USER").expect("USER not found in .env!");
+  let admin_pass = env::var("ADMIN_PASS").expect("PASS not found in .env!");
+  
   if data.user == admin_user && data.pass == admin_pass{  
     HttpResponse::Ok().json("Login Success!")
   } else{
